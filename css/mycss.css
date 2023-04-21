@@ -1,0 +1,43 @@
+:root{
+    --color1-1:#c9c3c0;    --color2-1:#d3ebe0; /*--color2-1:#d3ebe0;*/
+    --color1-2:#8e8680;    --color2-2:#85c5ad;   --color3-2:#90b9cd;
+    --color1-3:#a27d77;    --color2-3:#2f8d6a;   --color3-3:#2f6e98;
+    --color1-4:#414143;  /*--color1-4:#414143;*/ /*--color1-4:#414143;*/
+ 
+    --color4-1:#f5c0c3;    --color5-1:#d0b7d8;   --color6-1:#dda5a4;
+    --color4-2:#e97272;    --color5-2:#9a3f96;   --color6-2:#b55d6a;
+    --color4-3:#db0b26;    --color5-3:#5e2d7e;   --color6-3:#43b5b0;
+  /*--color1-4:#414143;*/  /*--color1-4:#414143;*/   --color6-4:#174c60;
+ 
+  /*--color3-2:#90b9cd;*/    --color8-1:#d3589a;   --color9-1:#d9cfe7;
+    --color7-2:#998e95;    --color8-2:#dea26e;   --color9-2:#abbcba;
+    --color7-3:#e6c27a;  /*--color6-4:#174c60;*/   --color9-3:#b0c36c;
+    --color7-4:#6d7a9e;    --color8-4:#215d56;   --color9-4:#556b7e;
+ 
+  /*--color4-1:#f5c0c3;*/    --color11-1:#fbd900;   --color12-1:#f5c4ac;
+    --color10-2:#3ca64b; /*--color4-3:#db0b26;*/    --color12-2:#a5b85d;
+    --color10-3:#eb7f1d; /*--color10-2:#3ca64b;*/   --color12-3:#e95f28;
+  /*--color1-2:#8e8680;*/    --color11-4:#5591cc;   --color12-4:#1f202b; 
+ 
+    --colorOther-1:#fbf9cc; --colorOther-2:#FFFFFF;   --colorOther-3:#e95f28;
+    --colorOther-4:#E8CAA4;
+    --colorOther-5:#FFB69B;
+    --colorOther-6:#A299CA;
+    --colorOther-7:#7CCAAE;
+    --colorOther-8:#E5D67B;
+    --colorOther-9:#735B69;
+ }
+
+*{
+    margin: 0px;
+    padding: 0px;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.demo{
+    width: 90%;
+    margin: 10px auto;
+}
