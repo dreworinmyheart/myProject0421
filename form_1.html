@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>時間紀錄</title>
+
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/mycss.css">
+        
+        <style>
+
+            .hiddenMessage{
+                visibility: hidden;
+                font-size: 0.75rem;
+            }
+            .formateCorrectMessage{
+                color: var(--color2-3);
+                font-size: 0.75rem;
+            }
+            .formateErrorMessage{
+                color: var(--color4-3);
+                font-size: 0.75rem;
+            }
+        </style>
+    </head>
+    <body class="bg-secondary">
+        <div class="container">
+            <div class="row mt-3">
+                 <!-- 複習 -->
+                 <div class="col-md-12">
+                    
+                    <div class="row bg-dark">
+                        <div class="col-md-12">
+                            <div class="fs-5" style="color: white;padding: 7px;text-align: center;">首頁
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row bg-white">
+                        <div class="col-md-12">
+
+                            <!-- 帳號 -->
+                            <div class="row align-items-center mt-2 mb-2">
+                                    <div class="col-md-3">
+                                        <label class="form-label" for="r_account" style="width:100%;">帳號</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" id="r_account" name="r_account" placeholder="請輸入帳號,字數5~10!!" minlength="5" maxlength="10">
+                                    </div>
+                            </div>
+                            <!-- 帳號提示訊息 -->
+                            <h6 class="hiddenMessage mb-2">null</h6>
+
+                            <!-- 密碼 -->
+                            <div class="row align-items-center mt-2 mb-2">
+                                    <div class="col-md-3">
+                                        <label class="form-label" for="r_password" style="width:100%;">密碼</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" id="r_password" name="r_password" placeholder="請輸入帳號,字數3~10!!" minlength="3" maxlength="10">
+                                    </div>
+                            </div>
+
+                            <!-- 確認密碼 -->
+                            <div class="row align-items-center mt-2 mb-2">
+                                    <div class="col-md-3">
+                                        <label class="form-label" for="r_password" style="width:100%;">確認密碼</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" id="r_password" name="r_password"  minlength="3" maxlength="10">
+                                    </div>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="row align-items-center mt-2 mb-2">
+                                    <div class="col-md-3">
+                                        <label class="form-label" for="r_Email" style="width:100%;">Email</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="email" class="form-control" id="r_Email" name="r_Email" placeholder="請輸入帳號,字數5~12!!" minlength="5" maxlength="12">
+                                    </div>
+                            </div>
+
+                            <!-- 生日 -->
+                            <div class="row align-items-center mt-2 mb-2">
+                                    <div class="col-md-3">
+                                        <label class="form-label" for="r_birthday" style="width:100%;">生日</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="date" class="form-control" id="r_birthday" name="r_birthday">
+                                    </div>
+                            </div>
+
+                            <!-- 年齡 -->
+                            <div class="row align-items-center mt-2 mb-2">
+                                    <div class="col-md-3">
+                                        <label class="form-label" for="r_age" style="width:100%;">年齡</label>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <label class="form-label" style="width: 100%;text-align: center;" id="age_value" name="age_value">1</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="range" class="form-range" id="r_age" name="r_age" min="1" max="80" value="1">
+                                    </div>
+                            </div>
+
+                            <!-- 最高學歷 -->
+                            <div class="row align-items-center mt-2 mb-2">
+                                    <div class="col-md-3">
+                                        <label class="form-label" for="r_academicQualifications" style="width:100%;">最高學歷</label>
+                                    </div>
+                                    <div class="col-md-9">
+
+                                        <select class="form-select text-center" name="r_academicQualifications" id="r_academicQualifications">
+                                            <option value="小學">小學</option>
+                                            <option value="國中">國中</option>
+                                            <option value="高中">高中</option>
+                                            <option value="大學">大學</option>
+                                            <option value="碩士">碩士</option>
+                                            <option value="博士">博士</option>
+                                        </select>                                        
+                                    </div>
+                            </div>
+
+                            <!-- 興趣 -->
+                            <div class="row align-items-center mt-2 mb-2">
+                                    <div class="col-md-3">
+                                        <label class="form-label" style="width:100%;">興趣(複選)</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="form-check form-check-inline">
+                                            <input type="checkbox" class="form-check-input" id="r_ins_checkbox1" name="r_ins" value="跑步">
+                                            <label for="r_ins_checkbox1" class="form-check-label">跑步</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input type="checkbox" class="form-check-input" id="r_ins_checkbox2" name="r_ins" value="爬山">
+                                            <label for="r_ins_checkbox2" class="form-check-label">爬山</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input type="checkbox" class="form-check-input" id="r_ins_checkbox3" name="r_ins" value="閱讀">
+                                            <label for="r_ins_checkbox3" class="form-check-label">閱讀</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input type="checkbox" class="form-check-input" id="r_ins_checkbox4" name="r_ins" value="電腦遊戲">
+                                            <label for="r_ins_checkbox4" class="form-check-label">電腦遊戲</label>
+                                        </div>
+                                    </div>
+                            </div>
+
+                            <!-- 血型 -->
+                            <div class="row align-items-center mt-2 mb-2">
+                                    <div class="col-md-3">
+                                        <label for="">血型(單選)</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="form-check-inline">
+                                            <input type="radio" class="form-check-input" name="bloodType" id="type_a" value="A">
+                                            <label for="type_a" class="form-check-label">A型</label>
+                                        </div>
+                                        <div class="form-check-inline">
+                                            <input type="radio" class="form-check-input" name="bloodType" id="type_b" value="B">
+                                            <label for="type_b" class="form-check-label">B型</label>
+                                        </div>
+                                        <div class="form-check-inline">
+                                            <input type="radio" class="form-check-input" name="bloodType" id="type_ab" value="AB">
+                                            <label for="type_ab" class="form-check-label">AB型</label>
+                                        </div>
+                                        <div class="form-check-inline">
+                                            <input type="radio" class="form-check-input" name="bloodType" id="type_o" value="O">
+                                            <label for="type_o" class="form-check-label">O型</label>
+                                        </div>
+                                    </div>
+                            </div>
+
+                            <!-- 確認送出按鈕 -->
+                            <div class="row align-items-center mt-2 mb-2 p-2">
+                                <button type="submit" class="btn btn-lg btn-dark" id="R_send">確認</button>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+                <!-- 複習表單顯示區 -->
+                <div class="demo" id="display_review"></div>
+            </div>
+            
+        </div>
+
+        
+
+        <script src="./js/bootstrap.bundle.min.js"></script>
+        <script src="./js/jquery-3.6.4.min.js"></script>
+        <script>
+
+            //區塊1
+            $(function(){
+                //送出
+                $("#ok1").click(function(){
+                    var customerOptions = [];
+                    var satisfaction;
+
+                    $("input[name='customerOptions1']:checked").each(function(){
+                        customerOptions.push($(this).val());
+                    })
+
+                    $("input[name='satisfaction1']:checked").each(function(){
+                        satisfaction = $(this).val();
+                    })
+
+                    $("#displayArea1").html(
+                        "<h1>區塊1輸入資料</h1><hr>"+
+
+                        "<h2>帳號:"+$("#name1").val()+"</h2>"+
+                        "<h2>密碼:"+$("#password1").val()+"</h2>"+
+                        "<h2>年齡:"+$("#age1").val()+"</h2>"+
+                        "<h2>餐點:"+$("#food1").val()+"</h2>"+
+                        "<h2>加點:"+$("#recommend_other1").val()+"</h2>"+
+                        "<h2>意見:"+customerOptions.join(',')+"</h2>"+
+                        "<h2>滿意度:"+satisfaction+"</h2>"  
+                    );
+                            
+                });  
+
+                //取消
+                $("#cancel1").click(function(){
+                    $("#name1").val("");
+                    $("#password1").val("");
+                    $("#age1").val("");
+
+                    $("#displayArea1").html(
+                        "<h1>區塊1清除資料</h1><hr>"+
+
+                        "<h2>帳號:</h2>"+
+                        "<h2>密碼:</h2>"+
+                        "<h2>年齡:</h2>"+
+                        "<h2>餐點:</h2>"+
+                        "<h2>加點:</h2>" 
+
+                    );
+                });               
+            })
+
+            //區塊2
+            $(function(){
+                
+                //送出
+                $("#ok2").click(function(){
+                    console.log("區塊2")
+                    
+                    console.log("帳號："+$("#name2").val());
+                    console.log("密碼："+$("#password2").val());
+                    console.log("年齡："+$("#age2").val());
+                    console.log("");
+
+                    var optionArray = [];
+                    var satisfaction;
+
+                    //寫法1
+                    // $.each($("input[name='customerOptions2']:checked"),function(){
+                    //     console.log($(this).val());
+                    // })
+                    
+                    //寫法2
+                    $("input[name='customerOptions2']:checked").each(function(){
+                        console.log($(this).val());
+                        optionArray.push($(this).val());
+                    })
+
+                    $("input[name='satisfaction2']:checked").each(function(){
+                        console.log($(this).val());
+                        satisfaction= $(this).val();
+                    })
+
+                    $("#displayArea1").html(
+                        "<h1>區塊2輸入資料</h1><hr>"+
+
+                        "<h2>帳號:"+$("#name2").val()+"</h2>"+
+                        "<h2>密碼:"+$("#password2").val()+"</h2>"+
+                        "<h2>年齡:"+$("#age2").val()+"</h2>"+
+                        "<h2>餐點:"+$("#food2").val()+"</h2>"+
+                        "<h2>加點:"+$("#recommend_other2").val()+"</h2>"+
+                        "<h2>意見:"+optionArray.join('/')+"</h2>"+
+                        "<h2>滿意度:"+satisfaction+"</h2>" 
+                        
+                        //陣列名.join('分割符')
+                        //能把多個陣列的內容用分割符分割
+                    );                    
+                });  
+
+                //取消
+                $("#cancel2").click(function(){
+                    $("#name2").val("");
+                    $("#password2").val("");
+                    $("#age2").val("");
+
+                    $("#displayArea1").html(
+                        "<h1>區塊2清除資料</h1><hr>"+
+
+                        "<h2>帳號:</h2>"+
+                        "<h2>密碼:</h2>"+
+                        "<h2>年齡:</h2>"+
+                        "<h2>餐點:</h2>"+
+                        "<h2>加點:</h2>"+
+                        "<h2>意見:</h2>"+
+                        "<h2>滿意度:</h2>"  
+                    );
+                });               
+            })
+            
+            //區塊3 switch
+            $('#switch1').change(function(){
+                // console.log($(this).is(':checked'));
+                if($(this).is(':checked')==true){
+                    $('#switch_state').html('開燈');
+                    $('.myHouse').css("background-color","var(--color11-1)");
+                }else {
+                    $('#switch_state').html('關燈'); 
+                    $('.myHouse').css("background-color","var(--color1-4)");
+                }
+            })
+        
+            //區塊4 range
+            $('#rangeBar').change(function(){
+                // console.log($(this).val());
+                $('#range_age').html($(this).val()+'歲');
+            })
+        
+            //區塊4-1 range進階應用
+            
+            /*
+                $('#redBar').change(function(){
+                    console.log($(this).val());
+                    $('#range_red').html('紅：'+$(this).val());
+                })
+
+                $('#greenBar').change(function(){
+                    console.log($(this).val());
+                    $('#range_green').html('綠：'+$(this).val());
+                })
+
+                $('#blueBar').change(function(){
+                    console.log($(this).val());
+                    $('#range_blue').html('藍：'+$(this).val());
+                })
+            */
+
+            function setColor(){
+                var red = $('#redBar').val();
+                var green = $('#greenBar').val();
+                var blue = $('#blueBar').val();
+                var alpha = $('#alphaBar').val();
+
+                var color = 'rgba('+red+','+green+','+blue+','+alpha+')';
+
+                // console.log(color);
+
+                $('#range_red').html('紅：'+red);
+                $('#range_green').html('綠：'+green);
+                $('#range_blue').html('藍：'+blue);
+                $('#range_alpha').html('透明度：'+alpha);
+
+                $('.colorBox').css("background-color",color);
+            }
+
+            //複習 
+                
+                var incorrect_input = [];
+
+                //帳號監聽
+                $('#r_account').change(function(){
+                    if ($('#r_account').val().length<5) {
+                        $('#r_account').css("border-color","red");
+                        incorrect_input[0]=false;
+
+                        $('.formateErrorMessage').css('')
+                        $('.formateErrorMessage').html("帳號格式錯誤");
+
+                    }else{
+                        $('#r_account').css("border-color","");
+                        incorrect_input[0]=true;
+                    }
+                })
+
+                //密碼監聽
+                $('#r_account').change(function(){
+                    if ($('#r_password').val().length<3) {
+                        $('#r_password').css("border-color","red");
+                        incorrect_input[1]=false;
+                    }else{
+                        $('#r_password').css("border-color","");
+                        incorrect_input[1]=true;
+                    }
+                })
+
+                
+
+                
+
+                // if ($('#r_Email').val().length<5) {
+                //     $('#r_Email').css("border-color","red");
+                //     incorrect_input[2]=false;
+                // }else{
+                //     $('#r_Email').css("border-color","");                    
+                //     incorrect_input[2]=true;
+                // }
+
+                // if ($('#r_birthday').val()=='') {
+                //     $('#r_birthday').css("border-color","red");
+                //     incorrect_input[3]=false;
+                // }else{
+                //     $('#r_birthday').css("border-color","");                    
+                //     incorrect_input[3]=true;
+                // }
+
+                
+                
+                $('#R_send').click(function(){
+                    if(incorrect_input.includes(false)){
+                        alert('有資料為符合輸入標準，請先進行修改');
+                    }else{
+                        $('#display_review').html("<h3>帳號:"+$('#r_account').val()+"</h3");
+                    }
+                })
+
+            
+        </script>
+    </body>
+</html>

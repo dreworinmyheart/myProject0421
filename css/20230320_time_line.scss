@@ -1,0 +1,104 @@
+.myImg{
+    height: 300px;
+                background-position: center center;
+                background-size: cover;
+}
+
+body{
+
+    background-color: var(--color2-1);
+    .container{
+        // border: 1px solid cadetblue;
+
+        header{
+
+            .MyTitle{
+                // border: 1px solid hotpink;
+
+                text-align: center;
+
+                margin-top: 30px;
+            }
+        }
+
+        nav{
+            // border: 1px solid navajowhite;
+        }
+
+        main{
+            // border: 1px solid maroon;
+
+            position: relative;
+
+            &::before{
+                content: "";
+
+                position: absolute;
+                border: 1px solid red;
+
+                top: 0;
+                left: -2%;
+                bottom: 0;
+            }
+
+            padding: 10px;
+
+            .area{
+
+                // border: 1px solid green;
+
+                position: relative;
+
+                margin-bottom:30px;
+
+                &::before{
+                    content: "";
+                    width: 20px;
+                    height: 20px;
+
+                    background-color: var(--colorOther-2);
+                    border: 6px solid green;
+                    border-radius: 50%;
+
+                    position: absolute;
+                    left: -3.2%;
+
+                    // transform:translate(-50%,-50%);
+
+                }
+
+                &:hover .myImg{
+                    opacity:0.3;
+                }
+                &:hover .EventTitle{
+ 
+                    transition: opacity 3s;                  
+                    opacity:1;
+                }
+
+                .EventTitle{
+                    position: absolute;
+
+                    font-weight: bolder;
+
+                    width: 100%;
+
+                    top: 50%;
+                    left: 50%;
+                    
+                    transform: translate(-50%,-50%);
+                    opacity: 0;
+                    transition: opacity 0s;
+                }
+
+                .myImg{
+
+                    transition: opacity 1s;
+                    
+                }
+            }
+            
+        }
+
+    }
+}
